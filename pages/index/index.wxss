@@ -1,0 +1,33 @@
+/* pages/my/my.wxss */
+.con{
+  margin-top:100rpx;
+  text-align: center;
+}
+.con .img{
+  width: 300rpx;
+  height: 300rpx;
+}
+.con .input{
+  display: flex;
+  margin: auto;
+  /* align-items:center; */
+  font-size: 36rpx;
+  width: 80%;
+  height: 80rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+}
+.bindfocus{
+  border: 2rpx solid #4FBBDB !important;
+}
+.input input{
+  flex: auto;
+  padding: 20rpx;
+  text-align: left;
+}
+.input .button{
+  flex: auto;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  background: #4FBBDB;
+}

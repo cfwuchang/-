@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "footer-but":"/components/footer-but"
+  },
   "navigationBarTitleText": "搜索页",
   "backgroundColor":"#ccc"
 }

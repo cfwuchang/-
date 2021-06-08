@@ -31,3 +31,28 @@
   line-height: 80rpx;
   background: #4FBBDB;
 }
+.hot,.history{
+  margin: 20rpx 40rpx;
+}
+.hot-img ,.history-img{
+  width: 46rpx;
+  height: 46rpx;
+  vertical-align:middle;
+}
+.hot-text,.history-text{
+  vertical-align:middle;
+  font-size: 34rpx;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 10rpx;
+}
+.hot-list text ,.history-text text{
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+.active{
+  color: pink;
+}
+.bun .con-but{
+  margin-top: 100rpx;
+}

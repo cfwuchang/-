@@ -9,9 +9,6 @@
   </view>
   <view class="con-com">
     <view class="com-title" wx:for="{{com.title}}" wx:key='*this'>
-      <text wx:if="{{index==0}}">资源名称：</text>
-      <text wx:if="{{index==1}}">分享人：</text>
-      <text wx:if="{{index==2}}">分享时间：</text>
       <text>{{item}}</text>
     </view>
     <view class="com-body" >
@@ -24,12 +21,13 @@
     点击复制提取码到剪切板
     </view>
   </view>
-  <view class="list-title">猜你喜欢：</view>
-  <view class="lists">
+  <view class="list-title" wx:if="{{user.switch.two?true:false}}">猜你喜欢：</view>
+  <view class="lists" wx:if="{{user.switch.two?true:false}}">
     <view wx:for="{{lists}}" wx:key="*this">
     <view class="lists-title" bindtap="listHandler" data-url="{{item.url}}" data-title="{{item.title}}">
       {{item.title}}
     </view>
   </view>
   </view>
+  <footer-but class="bun"></footer-but>
 </view>

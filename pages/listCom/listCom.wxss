@@ -30,6 +30,9 @@ page{
   line-height: 80rpx;
   background: #4FBBDB;
 }
+.com-body{
+  word-break:break-all; 
+}
 .con-com,.lists{
   margin: 20rpx 30rpx;
   padding: 20rpx;
@@ -53,4 +56,7 @@ page{
   margin: 20rpx 0;
   font-size: 30rpx;
   color: #4FBBDB;
+}
+.bun .con-but{
+  margin-top: 100rpx;
 }

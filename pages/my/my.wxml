@@ -20,9 +20,8 @@
     </view>
     <button disabled="{{(user.history==undefined ||user.history.length==0)?true:false }}" type="primary" bindtap="buttonHandler">清除搜索记录</button>
   </view>
-  <view class="con-but">
-    <text>免责申明：本小程序所有资源采集自互联网自动爬取;制作者不付任何法律责任!</text>
-    <text>下载后请24小时内删除，原作者如果认为本小程序侵犯了您的版权，请邮箱告知我们删除!</text>
-    <view class="mail">2511243684@qq.com</view>
-  </view>
+  <button open-type="share" size="default">
+    点击转发给你的小伙伴把！
+  </button>
+  <footer-but class="bun"></footer-but>
 </view>

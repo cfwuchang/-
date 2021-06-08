@@ -9,7 +9,8 @@ Page({
     input: '',
     url:'',
     title:'',
-    lists:[]
+    lists:[],
+    user:''
   },
    /**
    * 生命周期函数--监听页面加载
@@ -19,7 +20,19 @@ Page({
       "url": options.url,
       'title':options.title
     }),
-    
+    wx.cloud.callFunction({
+      name:'users',
+      data:{
+        $url:'getlogin'
+      }
+    }).then(r=>{
+      console.log(r);
+      this.setData({
+        'user':r.result.data[0]
+      })
+    }).catch(err=>{
+      console.log(err);
+    })
     this.details(options.url)
     this.associate(options.title)
     
@@ -112,14 +125,18 @@ Page({
       }
     }
       aaa.con=r.result.con
-     var cc=[]
+      var cc=[]
       var b=r.result.headline
-      var b1=b.indexOf('20')
-      if(b.indexOf('20')!=-1){
-        cc.push(b.substring(0,b1-2))
-        cc.push(b.substring(b1-2,b1))
-        cc.push(b.substring(b1,b.length))
+      var b1=b.indexOf('资源内容：')
+      var b2=b.substring(0,b1)
+      var arr=b2.split(/[ ]+/)
+      for (let i = 0; i < arr.length; i++) {
+        if(arr[i].length!=2 && i!=0){
+          arr[i]=arr[i].substring(0, arr[i].length - 1);
+          cc.push(arr[i])
+        }
       }
+      console.log(cc);
       aaa.title=cc
       var c1=a.indexOf('码')
       console.log(c1);

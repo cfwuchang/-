@@ -1,15 +1,17 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/my/my",
     "pages/list/list",
-    "pages/listCom/listCom"
+    "pages/listCom/listCom",
+    "components/footer-but"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "搜搜盘",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "color": "#cccccc",
@@ -23,11 +25,12 @@
         "selectedIconPath": "./img/selectedIcon/zhuye.png"
       },
       {
-      "pagePath": "pages/my/my",
-      "text": "我的",
-      "iconPath": "./img/icon/wode.png",
-      "selectedIconPath": "./img/selectedIcon/wode.png"
-    }]
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./img/icon/wode.png",
+        "selectedIconPath": "./img/selectedIcon/wode.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -51,27 +51,8 @@ page{
   width: 54rpx;
   height: 54rpx;
 }
-.con-but{
+.bun .con-but{
   position: fixed;
   bottom:10rpx;
-  text-align: center;
-  color: #ccc;
-}
-.con-view{
-  margin: 40rpx;
-  padding: 20rpx;
-  background: #fff;
-  border-radius: 10rpx;
-  font-size: 34rpx;
-}
-.one,.two,.three{
-  padding: 20rpx 0;
-  display: flex;
-}
-.one text,.two text ,.three text{
-  flex: 9;
-}
-.one switch ,.two text,.three text{
-  flex: 1;
 }
 

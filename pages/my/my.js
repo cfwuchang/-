@@ -8,7 +8,7 @@ Page({
   user:{},
   bool:true,
   switch:{
-    onw:false,
+    one:false,
     two:true,
     three:true
   }
@@ -163,10 +163,15 @@ Page({
 
   },
 
+
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '搜搜盘',
+      desc: '帮助有需要的你！',
+      path: '/pages/index/index'
+    }
   }
 })

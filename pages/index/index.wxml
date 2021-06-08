@@ -5,8 +5,20 @@
   <input type="text" placeholder="搜索一下" bindfocus="bindfocus" bindblur="bindblur" bindconfirm="bindconfirm" value="{{input}}"/>
   <view class="button" bindtap="bindconfirm">点击搜索</view>
   </view>
-  <view class="history">
-    <text class="history-text">热门搜索：</text>
-    <view class="history-list" wx:for="{{list}}" wx:key='*this'>{{item}}</view>
+  <view class="hot" wx:if="{{user.switch.three}}">
+    <view class="hot-text"><image class="hot-img" src="/img/hot.png"></image> 热门搜索：</view>
+    <view class="hot-list" >
+    <text wx:for="{{list}}" wx:key='*this' bindtap="hotHandler" class="{{hotIndex==index?'active':''}}"
+    data-i="{{index}}" data-v="{{item}}"> {{item}} </text>
+    </view>
   </view>
+  <view class="history" wx:if="{{!user.switch.one}}">
+    <view class="history-text"><image class="history-img" src="/img/history.png"></image> 历史搜索：</view>
+    <view class="history-list" >
+    <text wx:for="{{user.history}}" wx:key='*this' bindtap="historyHandler" class="{{historyIndex==index?'active':''}}"
+    data-i="{{index}}" data-v="{{item}}"> {{item}} </text>
+    </view>
+  </view>
+  <footer-but class="bun"></footer-but>
+
 </view>

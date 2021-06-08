@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "footer-but":"/components/footer-but"
+  },
   "navigationBarTitleText": "我的"
 }

@@ -13,6 +13,21 @@ cloud.init({
 // 云函数入口函数
 exports.main = (event, context) => {
   const app = new TcbRouter({ event });
+  // 爬取首页热门搜索
+  app.router('hot', async (ctx, next) => {
+    return rq({
+      url: `https://www.kolsou.com`,
+      headers: {
+        //"content-type": "application/json",
+        "content-Type": "text/html;charset=UTF-8;",
+      },
+    }).then((res=>{
+      // return res
+        const $ = cheerio.load(res)
+        const list =  $('.w650').children('ul').find('li').text()
+        ctx.body= list
+    }))
+  })
   // 爬取关键字列表
   app.router('list', async (ctx, next) => {
     var aa=encodeURIComponent(event.value)
@@ -59,7 +74,7 @@ exports.main = (event, context) => {
       // return res
       var aa={}
         const $ = cheerio.load(res)
-        const new_title =  $('.data_row').children('font').text()
+        const new_title =  $('.data_row').text()
         aa.headline=new_title
         var news_title=$('.fa').children('div').text()
         var url=$('.fa').children('div').children('a').attr('href')

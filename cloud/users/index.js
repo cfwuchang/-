@@ -48,6 +48,28 @@ exports.main = (event, context) => {
       }
     })
   });
+  app.router('addhistory', async (ctx, next) => {
+    const db = cloud.database();
+    const _ = db.command;
+    ctx.body= db.collection('users').where({
+      openid:event.openid
+    }).update({
+      data:{
+        history:_.push(event.v)
+      }
+    })
+  });
+  app.router('top10history', async (ctx, next) => {
+    const db = cloud.database();
+    const _ = db.command;
+    ctx.body= db.collection('users').where({
+      openid:event.openid
+    }).update({
+      data:{
+        history:_.shift()
+      }
+    })
+  });
   return app.serve();
 
 }
